@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique - Paniers Gourmands</title>
+    <link rel="preconnect" href="https://cdn.snipcart.com">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding-bottom: 50px;
+        }
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .cart-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .cart-button:hover {
+            transform: scale(1.05);
+            background: #ff5252;
+        }
+        .cart-count {
+            background: white;
+            color: #ff6b6b;
+            border-radius: 50%;
+            padding: 2px 8px;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #ddd;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .product-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .add-to-cart:hover {
+            background: #ff5252;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">🎁 Paniers Gourmands</a>
+            <button class="cart-button snipcart-checkout">
+                🛒 Panier
+                <span class="snipcart-items-count cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <h1>Nos Paniers Gourmands</h1>
+        
+        <div class="products-grid">
+            <!-- Produit 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop" 
+                     alt="Panier Découverte" 
+                     class="product-image"
+                     onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22><rect fill=%22%23ddd%22 width=%22300%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22>Panier Découverte</text></svg>'">
+                <div class="product-info">
+                    <h2 class="product-title">Panier Découverte</h2>
+                    <p class="product-description">Un assortiment de nos meilleurs produits : fromages, charcuterie, confitures artisanales et pain de campagne.</p>
+                    <div class="product-price">39,99 €</div>
+                    <button class="add-to-cart snipcart-add-item"
+                        data-item-id="panier-decouverte"
+                        data-item-price="39.99"
+                        data-item-url="/"
+                        data-item-name="Panier Découverte"
+                        data-item-image="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&h=300&fit=crop"
+                        data-item-description="Fromages, charcuterie, confitures artisanales et pain de campagne">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop" 
+                     alt="Panier Terroir" 
+                     class="product-image"
+                     onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22><rect fill=%22%23ddd%22 width=%22300%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22>Panier Terroir</text></svg>'">
+                <div class="product-info">
+                    <h2 class="product-title">Panier Terroir</h2>
+                    <p class="product-description">Le meilleur de nos régions : foie gras, confit de canard, vin rouge AOC et douceurs locales.</p>
+                    <div class="product-price">59,99 €</div>
+                    <button class="add-to-cart snipcart-add-item"
+                        data-item-id="panier-terroir"
+                        data-item-price="59.99"
+                        data-item-url="/"
+                        data-item-name="Panier Terroir"
+                        data-item-image="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=300&fit=crop"
+                        data-item-description="Foie gras, confit de canard, vin rouge AOC et douceurs locales">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?w=400&h=300&fit=crop" 
+                     alt="Panier Gourmand" 
+                     class="product-image"
+                     onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22><rect fill=%22%23ddd%22 width=%22300%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22>Panier Gourmand</text></svg>'">
+                <div class="product-info">
+                    <h2 class="product-title">Panier Gourmand</h2>
+                    <p class="product-description">Pour les becs sucrés : chocolats fins, macarons, confitures rares et thé premium.</p>
+                    <div class="product-price">45,00 €</div>
+                    <button class="add-to-cart snipcart-add-item"
+                        data-item-id="panier-gourmand"
+                        data-item-price="45.00"
+                        data-item-url="/"
+                        data-item-name="Panier Gourmand"
+                        data-item-image="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?w=400&h=300&fit=crop"
+                        data-item-description="Chocolats fins, macarons, confitures rares et thé premium">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+
+            <!-- Produit 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1573246123716-012f1302f7fc?w=400&h=300&fit=crop" 
+                     alt="Panier Végétarien" 
+                     class="product-image"
+                     onerror="this.src='data:image/svg+xml;charset=UTF-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22200%22><rect fill=%22%23ddd%22 width=%22300%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22>Panier Végétarien</text></svg>'">
+                <div class="product-info">
+                    <h2 class="product-title">Panier Végétarien</h2>
+                    <p class="product-description">100% végétal : légumes bio, tofu fumé, pesto maison, graines et huiles d'exception.</p>
+                    <div class="product-price">34,99 €</div>
+                    <button class="add-to-cart snipcart-add-item"
+                        data-item-id="panier-vegetarien"
+                        data-item-price="34.99"
+                        data-item-url="/"
+                        data-item-name="Panier Végétarien"
+                        data-item-image="https://images.unsplash.com/photo-1573246123716-012f1302f7fc?w=400&h=300&fit=crop"
+                        data-item-description="Légumes bio, tofu fumé, pesto maison, graines et huiles d'exception">
+                        Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Paniers Gourmands - Tous droits réservés</p>
+        <p style="margin-top: 10px;">Livraison gratuite à partir de 50€ d'achat</p>
+    </footer>
+
+    <!-- Snipcart -->
+    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <div id="snipcart" data-api-key="YWYyODNhYTUtNTI4Mi00NzgxLWFiNWEtMTRjZWU2MWZhNGFkNjM5MTk4MTI3OTgwNDc5MTMx" data-config-modal-style="side" hidden></div>
+    
+</body>
+</html>
